@@ -50,7 +50,7 @@ class SmartCard:
         # See if our status word was an error
         try:
             self.errorchain[0]([], sw1, sw2)
-        except SWException, e:
+        except (SWException, e):
             # Did we get an unsuccessful attempt?
             logger.debug(e)
 
